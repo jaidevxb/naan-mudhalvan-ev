@@ -1,0 +1,24 @@
+%% Parameters for Calculate Performance Curves of BLDC example
+
+% This example shows how to calculate performance curves for a brushless 
+% DC (BLDC) motor. The simulation includes a speed ramp. Ideal trapezoidal 
+% modulation waves are used to drive an average-value converter. A 
+% triggered subsystem is used to determine the peak torque, power, 
+% current, and efficiency values for a given speed.
+
+% Copyright 2019-2023 The MathWorks, Inc.
+
+%% System Parameters
+pm_flux_linkage = 0.55;    % Maximum permanent magnet flux linkage [Wb]
+theta_constant  = 120;     % Rotor angle over which back emf is constant [deg]
+nPolePairs      = 1;       % Number of pole pairs
+Ld              = 0.00022; % Stator d-axis inductance, Ld [H]
+Lq              = 0.00022; % Stator q-axis inductance, Lq [H]
+L0              = 0.00022; % Stator zero-sequence inductance, L0 [H]
+Rs              = 0.13;    % Stator resistance per phase, Rs [Ohm]
+J               = 0.0001;  % Rotor inertia [kg*m^2]
+lam             = 0.2;     % Rotor damping [N*m/(rad/s)]
+Jsys            = 0.000027;% Load inertia [kg*m^2]
+
+%% Solver Parameters
+Ts = 5e-5; % Sample time [s]
